@@ -29,46 +29,49 @@
         private void InitializeComponent()
         {
             this.SetRegistersGroupBox = new System.Windows.Forms.GroupBox();
-            this.AlRegisterLabel = new System.Windows.Forms.Label();
-            this.AhRegisterLabel = new System.Windows.Forms.Label();
-            this.BlRegisterLabel = new System.Windows.Forms.Label();
-            this.BhRegisterLabel = new System.Windows.Forms.Label();
-            this.ChRegisterLabel = new System.Windows.Forms.Label();
-            this.ClRegisterLabel = new System.Windows.Forms.Label();
-            this.DhRegisterLabel = new System.Windows.Forms.Label();
+            this.DlRegisterTextBox = new System.Windows.Forms.TextBox();
+            this.DhRegisterTextBox = new System.Windows.Forms.TextBox();
+            this.ClRegisterTextBox = new System.Windows.Forms.TextBox();
+            this.ChRegisterTextBox = new System.Windows.Forms.TextBox();
+            this.BlRegisterTextBox = new System.Windows.Forms.TextBox();
+            this.BhRegisterTextBox = new System.Windows.Forms.TextBox();
+            this.AlRegisterTextBox = new System.Windows.Forms.TextBox();
+            this.AhRegisterTextBox = new System.Windows.Forms.TextBox();
             this.DlRegisterLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.DhRegisterLabel = new System.Windows.Forms.Label();
+            this.ClRegisterLabel = new System.Windows.Forms.Label();
+            this.ChRegisterLabel = new System.Windows.Forms.Label();
+            this.BhRegisterLabel = new System.Windows.Forms.Label();
+            this.BlRegisterLabel = new System.Windows.Forms.Label();
+            this.AhRegisterLabel = new System.Windows.Forms.Label();
+            this.AlRegisterLabel = new System.Windows.Forms.Label();
             this.InstructionSelectionComboBox = new System.Windows.Forms.ComboBox();
             this.Register1SelectionComboBox = new System.Windows.Forms.ComboBox();
             this.InstructionSelectionLabel = new System.Windows.Forms.Label();
             this.InstructionGroupBox = new System.Windows.Forms.GroupBox();
+            this.Register2MemoryAdressCheckBox = new System.Windows.Forms.CheckBox();
+            this.Register1MemoryAdressCheckBox = new System.Windows.Forms.CheckBox();
+            this.Register2Label = new System.Windows.Forms.Label();
             this.Register1Label = new System.Windows.Forms.Label();
             this.Register2SelectionComboBox = new System.Windows.Forms.ComboBox();
-            this.Register2Label = new System.Windows.Forms.Label();
-            this.Register1MemoryAdressCheckBox = new System.Windows.Forms.CheckBox();
-            this.Register2MemoryAdressCheckBox = new System.Windows.Forms.CheckBox();
+            this.ClearRegistersButton = new System.Windows.Forms.Button();
+            this.ExecuteInstructionButton = new System.Windows.Forms.Button();
+            this.ExitButton = new System.Windows.Forms.Button();
             this.SetRegistersGroupBox.SuspendLayout();
             this.InstructionGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // SetRegistersGroupBox
             // 
-            this.SetRegistersGroupBox.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.SetRegistersGroupBox.Controls.Add(this.textBox8);
-            this.SetRegistersGroupBox.Controls.Add(this.textBox4);
-            this.SetRegistersGroupBox.Controls.Add(this.textBox7);
-            this.SetRegistersGroupBox.Controls.Add(this.textBox3);
-            this.SetRegistersGroupBox.Controls.Add(this.textBox6);
-            this.SetRegistersGroupBox.Controls.Add(this.textBox2);
-            this.SetRegistersGroupBox.Controls.Add(this.textBox5);
-            this.SetRegistersGroupBox.Controls.Add(this.textBox1);
+            this.SetRegistersGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.SetRegistersGroupBox.Controls.Add(this.DlRegisterTextBox);
+            this.SetRegistersGroupBox.Controls.Add(this.DhRegisterTextBox);
+            this.SetRegistersGroupBox.Controls.Add(this.ClRegisterTextBox);
+            this.SetRegistersGroupBox.Controls.Add(this.ChRegisterTextBox);
+            this.SetRegistersGroupBox.Controls.Add(this.BlRegisterTextBox);
+            this.SetRegistersGroupBox.Controls.Add(this.BhRegisterTextBox);
+            this.SetRegistersGroupBox.Controls.Add(this.AlRegisterTextBox);
+            this.SetRegistersGroupBox.Controls.Add(this.AhRegisterTextBox);
             this.SetRegistersGroupBox.Controls.Add(this.DlRegisterLabel);
             this.SetRegistersGroupBox.Controls.Add(this.DhRegisterLabel);
             this.SetRegistersGroupBox.Controls.Add(this.ClRegisterLabel);
@@ -86,75 +89,69 @@
             this.SetRegistersGroupBox.TabStop = false;
             this.SetRegistersGroupBox.Text = "Register State";
             // 
-            // AlRegisterLabel
+            // DlRegisterTextBox
             // 
-            this.AlRegisterLabel.AutoSize = true;
-            this.AlRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AlRegisterLabel.Location = new System.Drawing.Point(146, 56);
-            this.AlRegisterLabel.Name = "AlRegisterLabel";
-            this.AlRegisterLabel.Size = new System.Drawing.Size(35, 22);
-            this.AlRegisterLabel.TabIndex = 0;
-            this.AlRegisterLabel.Text = "AL";
+            this.DlRegisterTextBox.Location = new System.Drawing.Point(187, 222);
+            this.DlRegisterTextBox.Name = "DlRegisterTextBox";
+            this.DlRegisterTextBox.Size = new System.Drawing.Size(37, 32);
+            this.DlRegisterTextBox.TabIndex = 8;
+            this.DlRegisterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AhRegisterTextBox_KeyPress);
             // 
-            // AhRegisterLabel
+            // DhRegisterTextBox
             // 
-            this.AhRegisterLabel.AutoSize = true;
-            this.AhRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.AhRegisterLabel.Location = new System.Drawing.Point(30, 56);
-            this.AhRegisterLabel.Name = "AhRegisterLabel";
-            this.AhRegisterLabel.Size = new System.Drawing.Size(38, 22);
-            this.AhRegisterLabel.TabIndex = 0;
-            this.AhRegisterLabel.Text = "AH";
+            this.DhRegisterTextBox.Location = new System.Drawing.Point(74, 222);
+            this.DhRegisterTextBox.Name = "DhRegisterTextBox";
+            this.DhRegisterTextBox.Size = new System.Drawing.Size(37, 32);
+            this.DhRegisterTextBox.TabIndex = 7;
+            this.DhRegisterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AhRegisterTextBox_KeyPress);
             // 
-            // BlRegisterLabel
+            // ClRegisterTextBox
             // 
-            this.BlRegisterLabel.AutoSize = true;
-            this.BlRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BlRegisterLabel.Location = new System.Drawing.Point(146, 110);
-            this.BlRegisterLabel.Name = "BlRegisterLabel";
-            this.BlRegisterLabel.Size = new System.Drawing.Size(35, 22);
-            this.BlRegisterLabel.TabIndex = 0;
-            this.BlRegisterLabel.Text = "BL";
+            this.ClRegisterTextBox.Location = new System.Drawing.Point(187, 164);
+            this.ClRegisterTextBox.Name = "ClRegisterTextBox";
+            this.ClRegisterTextBox.Size = new System.Drawing.Size(37, 32);
+            this.ClRegisterTextBox.TabIndex = 6;
+            this.ClRegisterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AhRegisterTextBox_KeyPress);
             // 
-            // BhRegisterLabel
+            // ChRegisterTextBox
             // 
-            this.BhRegisterLabel.AutoSize = true;
-            this.BhRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BhRegisterLabel.Location = new System.Drawing.Point(30, 110);
-            this.BhRegisterLabel.Name = "BhRegisterLabel";
-            this.BhRegisterLabel.Size = new System.Drawing.Size(38, 22);
-            this.BhRegisterLabel.TabIndex = 0;
-            this.BhRegisterLabel.Text = "BH";
+            this.ChRegisterTextBox.Location = new System.Drawing.Point(74, 164);
+            this.ChRegisterTextBox.Name = "ChRegisterTextBox";
+            this.ChRegisterTextBox.Size = new System.Drawing.Size(37, 32);
+            this.ChRegisterTextBox.TabIndex = 5;
+            this.ChRegisterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AhRegisterTextBox_KeyPress);
             // 
-            // ChRegisterLabel
+            // BlRegisterTextBox
             // 
-            this.ChRegisterLabel.AutoSize = true;
-            this.ChRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ChRegisterLabel.Location = new System.Drawing.Point(30, 169);
-            this.ChRegisterLabel.Name = "ChRegisterLabel";
-            this.ChRegisterLabel.Size = new System.Drawing.Size(38, 22);
-            this.ChRegisterLabel.TabIndex = 0;
-            this.ChRegisterLabel.Text = "CH";
+            this.BlRegisterTextBox.Location = new System.Drawing.Point(187, 105);
+            this.BlRegisterTextBox.Name = "BlRegisterTextBox";
+            this.BlRegisterTextBox.Size = new System.Drawing.Size(37, 32);
+            this.BlRegisterTextBox.TabIndex = 4;
+            this.BlRegisterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AhRegisterTextBox_KeyPress);
             // 
-            // ClRegisterLabel
+            // BhRegisterTextBox
             // 
-            this.ClRegisterLabel.AutoSize = true;
-            this.ClRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ClRegisterLabel.Location = new System.Drawing.Point(146, 169);
-            this.ClRegisterLabel.Name = "ClRegisterLabel";
-            this.ClRegisterLabel.Size = new System.Drawing.Size(35, 22);
-            this.ClRegisterLabel.TabIndex = 0;
-            this.ClRegisterLabel.Text = "CL";
+            this.BhRegisterTextBox.Location = new System.Drawing.Point(74, 105);
+            this.BhRegisterTextBox.Name = "BhRegisterTextBox";
+            this.BhRegisterTextBox.Size = new System.Drawing.Size(37, 32);
+            this.BhRegisterTextBox.TabIndex = 3;
+            this.BhRegisterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AhRegisterTextBox_KeyPress);
             // 
-            // DhRegisterLabel
+            // AlRegisterTextBox
             // 
-            this.DhRegisterLabel.AutoSize = true;
-            this.DhRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.DhRegisterLabel.Location = new System.Drawing.Point(30, 227);
-            this.DhRegisterLabel.Name = "DhRegisterLabel";
-            this.DhRegisterLabel.Size = new System.Drawing.Size(38, 22);
-            this.DhRegisterLabel.TabIndex = 0;
-            this.DhRegisterLabel.Text = "DH";
+            this.AlRegisterTextBox.Location = new System.Drawing.Point(187, 51);
+            this.AlRegisterTextBox.Name = "AlRegisterTextBox";
+            this.AlRegisterTextBox.Size = new System.Drawing.Size(37, 32);
+            this.AlRegisterTextBox.TabIndex = 2;
+            this.AlRegisterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AhRegisterTextBox_KeyPress);
+            // 
+            // AhRegisterTextBox
+            // 
+            this.AhRegisterTextBox.Location = new System.Drawing.Point(74, 51);
+            this.AhRegisterTextBox.Name = "AhRegisterTextBox";
+            this.AhRegisterTextBox.Size = new System.Drawing.Size(37, 32);
+            this.AhRegisterTextBox.TabIndex = 1;
+            this.AhRegisterTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.AhRegisterTextBox_KeyPress);
             // 
             // DlRegisterLabel
             // 
@@ -166,79 +163,115 @@
             this.DlRegisterLabel.TabIndex = 0;
             this.DlRegisterLabel.Text = "DL";
             // 
-            // textBox1
+            // DhRegisterLabel
             // 
-            this.textBox1.Location = new System.Drawing.Point(74, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(37, 32);
-            this.textBox1.TabIndex = 1;
+            this.DhRegisterLabel.AutoSize = true;
+            this.DhRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DhRegisterLabel.Location = new System.Drawing.Point(30, 227);
+            this.DhRegisterLabel.Name = "DhRegisterLabel";
+            this.DhRegisterLabel.Size = new System.Drawing.Size(38, 22);
+            this.DhRegisterLabel.TabIndex = 0;
+            this.DhRegisterLabel.Text = "DH";
             // 
-            // textBox2
+            // ClRegisterLabel
             // 
-            this.textBox2.Location = new System.Drawing.Point(74, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(37, 32);
-            this.textBox2.TabIndex = 1;
+            this.ClRegisterLabel.AutoSize = true;
+            this.ClRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ClRegisterLabel.Location = new System.Drawing.Point(146, 169);
+            this.ClRegisterLabel.Name = "ClRegisterLabel";
+            this.ClRegisterLabel.Size = new System.Drawing.Size(35, 22);
+            this.ClRegisterLabel.TabIndex = 0;
+            this.ClRegisterLabel.Text = "CL";
             // 
-            // textBox3
+            // ChRegisterLabel
             // 
-            this.textBox3.Location = new System.Drawing.Point(74, 164);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(37, 32);
-            this.textBox3.TabIndex = 1;
+            this.ChRegisterLabel.AutoSize = true;
+            this.ChRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ChRegisterLabel.Location = new System.Drawing.Point(30, 169);
+            this.ChRegisterLabel.Name = "ChRegisterLabel";
+            this.ChRegisterLabel.Size = new System.Drawing.Size(38, 22);
+            this.ChRegisterLabel.TabIndex = 0;
+            this.ChRegisterLabel.Text = "CH";
             // 
-            // textBox4
+            // BhRegisterLabel
             // 
-            this.textBox4.Location = new System.Drawing.Point(74, 222);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(37, 32);
-            this.textBox4.TabIndex = 1;
+            this.BhRegisterLabel.AutoSize = true;
+            this.BhRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BhRegisterLabel.Location = new System.Drawing.Point(30, 110);
+            this.BhRegisterLabel.Name = "BhRegisterLabel";
+            this.BhRegisterLabel.Size = new System.Drawing.Size(38, 22);
+            this.BhRegisterLabel.TabIndex = 0;
+            this.BhRegisterLabel.Text = "BH";
             // 
-            // textBox5
+            // BlRegisterLabel
             // 
-            this.textBox5.Location = new System.Drawing.Point(187, 51);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(37, 32);
-            this.textBox5.TabIndex = 1;
+            this.BlRegisterLabel.AutoSize = true;
+            this.BlRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BlRegisterLabel.Location = new System.Drawing.Point(146, 110);
+            this.BlRegisterLabel.Name = "BlRegisterLabel";
+            this.BlRegisterLabel.Size = new System.Drawing.Size(35, 22);
+            this.BlRegisterLabel.TabIndex = 0;
+            this.BlRegisterLabel.Text = "BL";
             // 
-            // textBox6
+            // AhRegisterLabel
             // 
-            this.textBox6.Location = new System.Drawing.Point(187, 105);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(37, 32);
-            this.textBox6.TabIndex = 1;
+            this.AhRegisterLabel.AutoSize = true;
+            this.AhRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AhRegisterLabel.Location = new System.Drawing.Point(30, 56);
+            this.AhRegisterLabel.Name = "AhRegisterLabel";
+            this.AhRegisterLabel.Size = new System.Drawing.Size(38, 22);
+            this.AhRegisterLabel.TabIndex = 0;
+            this.AhRegisterLabel.Text = "AH";
             // 
-            // textBox7
+            // AlRegisterLabel
             // 
-            this.textBox7.Location = new System.Drawing.Point(187, 164);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(37, 32);
-            this.textBox7.TabIndex = 1;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(187, 222);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(37, 32);
-            this.textBox8.TabIndex = 1;
+            this.AlRegisterLabel.AutoSize = true;
+            this.AlRegisterLabel.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.AlRegisterLabel.Location = new System.Drawing.Point(146, 56);
+            this.AlRegisterLabel.Name = "AlRegisterLabel";
+            this.AlRegisterLabel.Size = new System.Drawing.Size(35, 22);
+            this.AlRegisterLabel.TabIndex = 0;
+            this.AlRegisterLabel.Text = "AL";
             // 
             // InstructionSelectionComboBox
             // 
-            this.InstructionSelectionComboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.InstructionSelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.InstructionSelectionComboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.InstructionSelectionComboBox.FormattingEnabled = true;
-            this.InstructionSelectionComboBox.Location = new System.Drawing.Point(15, 72);
+            this.InstructionSelectionComboBox.Items.AddRange(new object[] {
+            "MOV",
+            "XCHG",
+            "AND",
+            "OR",
+            "XOR",
+            "ADD",
+            "SUB",
+            "NOT",
+            "INC",
+            "DEC"});
+            this.InstructionSelectionComboBox.Location = new System.Drawing.Point(15, 81);
             this.InstructionSelectionComboBox.Name = "InstructionSelectionComboBox";
-            this.InstructionSelectionComboBox.Size = new System.Drawing.Size(177, 40);
-            this.InstructionSelectionComboBox.TabIndex = 1;
+            this.InstructionSelectionComboBox.Size = new System.Drawing.Size(177, 30);
+            this.InstructionSelectionComboBox.TabIndex = 9;
             // 
             // Register1SelectionComboBox
             // 
-            this.Register1SelectionComboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Register1SelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Register1SelectionComboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Register1SelectionComboBox.FormattingEnabled = true;
-            this.Register1SelectionComboBox.Location = new System.Drawing.Point(15, 150);
+            this.Register1SelectionComboBox.Items.AddRange(new object[] {
+            "AH",
+            "AL",
+            "BH",
+            "BL",
+            "CH",
+            "CL",
+            "DH",
+            "DL"});
+            this.Register1SelectionComboBox.Location = new System.Drawing.Point(15, 161);
             this.Register1SelectionComboBox.Name = "Register1SelectionComboBox";
-            this.Register1SelectionComboBox.Size = new System.Drawing.Size(177, 40);
-            this.Register1SelectionComboBox.TabIndex = 2;
+            this.Register1SelectionComboBox.Size = new System.Drawing.Size(177, 30);
+            this.Register1SelectionComboBox.TabIndex = 10;
             // 
             // InstructionSelectionLabel
             // 
@@ -267,6 +300,37 @@
             this.InstructionGroupBox.TabStop = false;
             this.InstructionGroupBox.Text = "Properties";
             // 
+            // Register2MemoryAdressCheckBox
+            // 
+            this.Register2MemoryAdressCheckBox.AutoSize = true;
+            this.Register2MemoryAdressCheckBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Register2MemoryAdressCheckBox.Location = new System.Drawing.Point(201, 239);
+            this.Register2MemoryAdressCheckBox.Name = "Register2MemoryAdressCheckBox";
+            this.Register2MemoryAdressCheckBox.Size = new System.Drawing.Size(197, 22);
+            this.Register2MemoryAdressCheckBox.TabIndex = 13;
+            this.Register2MemoryAdressCheckBox.Text = "Allow memory adress";
+            this.Register2MemoryAdressCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Register1MemoryAdressCheckBox
+            // 
+            this.Register1MemoryAdressCheckBox.AutoSize = true;
+            this.Register1MemoryAdressCheckBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Register1MemoryAdressCheckBox.Location = new System.Drawing.Point(201, 166);
+            this.Register1MemoryAdressCheckBox.Name = "Register1MemoryAdressCheckBox";
+            this.Register1MemoryAdressCheckBox.Size = new System.Drawing.Size(197, 22);
+            this.Register1MemoryAdressCheckBox.TabIndex = 12;
+            this.Register1MemoryAdressCheckBox.Text = "Allow memory adress";
+            this.Register1MemoryAdressCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // Register2Label
+            // 
+            this.Register2Label.AutoSize = true;
+            this.Register2Label.Location = new System.Drawing.Point(15, 199);
+            this.Register2Label.Name = "Register2Label";
+            this.Register2Label.Size = new System.Drawing.Size(177, 24);
+            this.Register2Label.TabIndex = 3;
+            this.Register2Label.Text = "Second Register";
+            // 
             // Register1Label
             // 
             this.Register1Label.AutoSize = true;
@@ -278,55 +342,68 @@
             // 
             // Register2SelectionComboBox
             // 
-            this.Register2SelectionComboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Register2SelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Register2SelectionComboBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Register2SelectionComboBox.FormattingEnabled = true;
-            this.Register2SelectionComboBox.Location = new System.Drawing.Point(15, 226);
+            this.Register2SelectionComboBox.Items.AddRange(new object[] {
+            "AH",
+            "AL",
+            "BH",
+            "BL",
+            "CH",
+            "CL",
+            "DH",
+            "DL"});
+            this.Register2SelectionComboBox.Location = new System.Drawing.Point(15, 234);
             this.Register2SelectionComboBox.Name = "Register2SelectionComboBox";
-            this.Register2SelectionComboBox.Size = new System.Drawing.Size(177, 40);
-            this.Register2SelectionComboBox.TabIndex = 2;
+            this.Register2SelectionComboBox.Size = new System.Drawing.Size(177, 30);
+            this.Register2SelectionComboBox.TabIndex = 11;
             // 
-            // Register2Label
+            // ClearRegistersButton
             // 
-            this.Register2Label.AutoSize = true;
-            this.Register2Label.Location = new System.Drawing.Point(15, 199);
-            this.Register2Label.Name = "Register2Label";
-            this.Register2Label.Size = new System.Drawing.Size(177, 24);
-            this.Register2Label.TabIndex = 3;
-            this.Register2Label.Text = "Second Register";
+            this.ClearRegistersButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ClearRegistersButton.Location = new System.Drawing.Point(12, 296);
+            this.ClearRegistersButton.Name = "ClearRegistersButton";
+            this.ClearRegistersButton.Size = new System.Drawing.Size(111, 53);
+            this.ClearRegistersButton.TabIndex = 14;
+            this.ClearRegistersButton.Text = "Clear";
+            this.ClearRegistersButton.UseVisualStyleBackColor = true;
             // 
-            // Register1MemoryAdressCheckBox
+            // ExecuteInstructionButton
             // 
-            this.Register1MemoryAdressCheckBox.AutoSize = true;
-            this.Register1MemoryAdressCheckBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Register1MemoryAdressCheckBox.Location = new System.Drawing.Point(201, 163);
-            this.Register1MemoryAdressCheckBox.Name = "Register1MemoryAdressCheckBox";
-            this.Register1MemoryAdressCheckBox.Size = new System.Drawing.Size(197, 22);
-            this.Register1MemoryAdressCheckBox.TabIndex = 4;
-            this.Register1MemoryAdressCheckBox.Text = "Allow memory adress";
-            this.Register1MemoryAdressCheckBox.UseVisualStyleBackColor = true;
+            this.ExecuteInstructionButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExecuteInstructionButton.Location = new System.Drawing.Point(297, 296);
+            this.ExecuteInstructionButton.Name = "ExecuteInstructionButton";
+            this.ExecuteInstructionButton.Size = new System.Drawing.Size(115, 53);
+            this.ExecuteInstructionButton.TabIndex = 15;
+            this.ExecuteInstructionButton.Text = "Execute";
+            this.ExecuteInstructionButton.UseVisualStyleBackColor = true;
             // 
-            // Register2MemoryAdressCheckBox
+            // ExitButton
             // 
-            this.Register2MemoryAdressCheckBox.AutoSize = true;
-            this.Register2MemoryAdressCheckBox.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.Register2MemoryAdressCheckBox.Location = new System.Drawing.Point(201, 239);
-            this.Register2MemoryAdressCheckBox.Name = "Register2MemoryAdressCheckBox";
-            this.Register2MemoryAdressCheckBox.Size = new System.Drawing.Size(197, 22);
-            this.Register2MemoryAdressCheckBox.TabIndex = 4;
-            this.Register2MemoryAdressCheckBox.Text = "Allow memory adress";
-            this.Register2MemoryAdressCheckBox.UseVisualStyleBackColor = true;
+            this.ExitButton.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ExitButton.Location = new System.Drawing.Point(590, 296);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(124, 53);
+            this.ExitButton.TabIndex = 16;
+            this.ExitButton.Text = "Exit";
+            this.ExitButton.UseVisualStyleBackColor = true;
             // 
             // Intel8086
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.ClientSize = new System.Drawing.Size(735, 313);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(726, 360);
+            this.Controls.Add(this.ExitButton);
+            this.Controls.Add(this.ExecuteInstructionButton);
+            this.Controls.Add(this.ClearRegistersButton);
             this.Controls.Add(this.InstructionGroupBox);
             this.Controls.Add(this.SetRegistersGroupBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Intel8086";
             this.Text = "Intel 8086 simulator";
+            this.Load += new System.EventHandler(this.Intel8086_Load);
             this.SetRegistersGroupBox.ResumeLayout(false);
             this.SetRegistersGroupBox.PerformLayout();
             this.InstructionGroupBox.ResumeLayout(false);
@@ -346,14 +423,14 @@
         private Label BlRegisterLabel;
         private Label AhRegisterLabel;
         private Label AlRegisterLabel;
-        private TextBox textBox8;
-        private TextBox textBox4;
-        private TextBox textBox7;
-        private TextBox textBox3;
-        private TextBox textBox6;
-        private TextBox textBox2;
-        private TextBox textBox5;
-        private TextBox textBox1;
+        private TextBox DlRegisterTextBox;
+        private TextBox DhRegisterTextBox;
+        private TextBox ClRegisterTextBox;
+        private TextBox ChRegisterTextBox;
+        private TextBox BlRegisterTextBox;
+        private TextBox BhRegisterTextBox;
+        private TextBox AlRegisterTextBox;
+        private TextBox AhRegisterTextBox;
         private ComboBox InstructionSelectionComboBox;
         private ComboBox Register1SelectionComboBox;
         private Label InstructionSelectionLabel;
@@ -363,5 +440,8 @@
         private Label Register2Label;
         private ComboBox Register2SelectionComboBox;
         private CheckBox Register2MemoryAdressCheckBox;
+        private Button ClearRegistersButton;
+        private Button ExecuteInstructionButton;
+        private Button ExitButton;
     }
 }
