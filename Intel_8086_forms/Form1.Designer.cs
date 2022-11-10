@@ -406,7 +406,7 @@
             this.Controls.Add(this.ClearRegistersButton);
             this.Controls.Add(this.InstructionGroupBox);
             this.Controls.Add(this.SetRegistersGroupBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Intel8086";
             this.Text = "Intel 8086 simulator";
             this.Load += new System.EventHandler(this.Intel8086_Load);

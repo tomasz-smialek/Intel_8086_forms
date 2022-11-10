@@ -104,8 +104,39 @@ namespace Intel_8086_forms
         //adding execution of the instruction : execute button
         private void ExecuteInstructionButton_Click(object sender, EventArgs e)
         {
-            Register.XCHG((Register)Register1SelectionComboBox.SelectedItem, (Register)Register2SelectionComboBox.SelectedItem);
-            RefreshValues();
+            switch (InstructionSelectionComboBox.SelectedIndex)
+            {
+                case 0:
+                    Register.MOV((Register)Register1SelectionComboBox.SelectedItem, (Register)Register2SelectionComboBox.SelectedItem);
+                    RefreshValues();
+                    break;
+                case 1:
+                    Register.XCHG((Register)Register1SelectionComboBox.SelectedItem, (Register)Register2SelectionComboBox.SelectedItem);
+                    RefreshValues();
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 6:
+
+                    break;
+                case 7:
+
+                    break;
+                default:
+
+                    break;
+            }
         }
     }
 }
+

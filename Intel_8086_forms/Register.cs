@@ -18,4 +18,39 @@ public class Register
     {
         (first.Value, second.Value) = (second.Value, first.Value);
     }
+
+    public static void MOV(Register first, Register second)
+    {
+        first.Value = second.Value;
+    }
+
+    public static void AND(Register first, Register second)
+    {
+        first.Value = first.Value & second.Value;
+    }
+     public static void OR(Register first, Register second)
+    {
+        first.Value = first.Value | second.Value;
+    }
+    public static void XOR(Register first, Register second)
+    {
+        first.Value = first.Value ^ second.Value;
+    }
+    public static void ADD(Register first, Register second)
+    {
+        first.Value = first.Value + second.Value;
+    }
+    public static void SUB(Register first, Register second)
+    {
+        first.Value = first.Value - second.Value;
+    }
+    public static void INC(Register first)
+    {
+        first.Value += 1;
+    }
+     public static void DEC(Register first)
+    {
+        first.Value -= 1;
+    }   
+
 }
