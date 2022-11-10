@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.SetRegistersGroupBox = new System.Windows.Forms.GroupBox();
             this.DlRegisterTextBox = new System.Windows.Forms.TextBox();
             this.DhRegisterTextBox = new System.Windows.Forms.TextBox();
@@ -58,8 +59,10 @@
             this.ExecuteInstructionButton = new System.Windows.Forms.Button();
             this.ExitButton = new System.Windows.Forms.Button();
             this.SetRegistersButton = new System.Windows.Forms.Button();
+            this.registerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SetRegistersGroupBox.SuspendLayout();
             this.InstructionGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.registerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // SetRegistersGroupBox
@@ -252,15 +255,6 @@
             this.Register1SelectionComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.Register1SelectionComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Register1SelectionComboBox.FormattingEnabled = true;
-            this.Register1SelectionComboBox.Items.AddRange(new object[] {
-            "AH",
-            "AL",
-            "BH",
-            "BL",
-            "CH",
-            "CL",
-            "DH",
-            "DL"});
             this.Register1SelectionComboBox.Location = new System.Drawing.Point(15, 161);
             this.Register1SelectionComboBox.Name = "Register1SelectionComboBox";
             this.Register1SelectionComboBox.Size = new System.Drawing.Size(177, 32);
@@ -361,6 +355,7 @@
             this.ClearRegistersButton.TabIndex = 14;
             this.ClearRegistersButton.Text = "Clear";
             this.ClearRegistersButton.UseVisualStyleBackColor = true;
+            this.ClearRegistersButton.Click += new System.EventHandler(this.ClearRegistersButton_Click);
             // 
             // ExecuteInstructionButton
             // 
@@ -371,6 +366,7 @@
             this.ExecuteInstructionButton.TabIndex = 15;
             this.ExecuteInstructionButton.Text = "Execute";
             this.ExecuteInstructionButton.UseVisualStyleBackColor = true;
+            this.ExecuteInstructionButton.Click += new System.EventHandler(this.ExecuteInstructionButton_Click);
             // 
             // ExitButton
             // 
@@ -381,6 +377,7 @@
             this.ExitButton.TabIndex = 16;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // SetRegistersButton
             // 
@@ -392,6 +389,10 @@
             this.SetRegistersButton.Text = "Set";
             this.SetRegistersButton.UseVisualStyleBackColor = true;
             this.SetRegistersButton.Click += new System.EventHandler(this.SetRegistersButton_Click);
+            // 
+            // registerBindingSource
+            // 
+            this.registerBindingSource.DataSource = typeof(Intel_8086_forms.Register);
             // 
             // Intel8086
             // 
@@ -413,6 +414,7 @@
             this.SetRegistersGroupBox.PerformLayout();
             this.InstructionGroupBox.ResumeLayout(false);
             this.InstructionGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.registerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -449,5 +451,6 @@
         private Button ExecuteInstructionButton;
         private Button ExitButton;
         private Button SetRegistersButton;
+        private BindingSource registerBindingSource;
     }
 }

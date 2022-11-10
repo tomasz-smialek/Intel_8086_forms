@@ -1,31 +1,21 @@
-using System.Diagnostics.Eventing.Reader;
-using System.Security.Cryptography;
-
 namespace Intel_8086_forms;
 
 public class Register
 {
-    public string Name { get; set; }
-    private int? _value = null;
+    public string? Name { get; set; }
+    public int? Value { get; set; }
 
-    public bool SetValue(string HexString)
+
+    public bool ValueCheck(string hexString)
     {
-        if (!int.TryParse(HexString, System.Globalization.NumberStyles.HexNumber, null, out int HexNumber))
-        {
-            _value = HexNumber;
+        if (int.TryParse(hexString, System.Globalization.NumberStyles.HexNumber, null, out int hexNumber) && (hexString.Length > 0 && hexString.Length <= 2))
             return true;
-        }
-        else
-            return false;
-    }
         
-    //public Register(string Name, string ValueString = "")
-    //{
-    //    if (!int.TryParse(ValueString, System.Globalization.NumberStyles.HexNumber, null, out int HexNumber))
-    //        _value = HexNumber;
-    //    else
-    //        _value = null;
+        return false;
+    }
 
-    //    _name = Name;
-    //}
+    public static void XCHG(Register first, Register second)
+    {
+        (first.Value, second.Value) = (second.Value, first.Value);
+    }
 }
