@@ -50,6 +50,8 @@
             this.Register1SelectionComboBox = new System.Windows.Forms.ComboBox();
             this.InstructionSelectionLabel = new System.Windows.Forms.Label();
             this.InstructionGroupBox = new System.Windows.Forms.GroupBox();
+            this.Register1TextBox = new System.Windows.Forms.TextBox();
+            this.Register2TextBox = new System.Windows.Forms.TextBox();
             this.Register2MemoryAdressCheckBox = new System.Windows.Forms.CheckBox();
             this.Register1MemoryAdressCheckBox = new System.Windows.Forms.CheckBox();
             this.Register2Label = new System.Windows.Forms.Label();
@@ -272,6 +274,8 @@
             // 
             // InstructionGroupBox
             // 
+            this.InstructionGroupBox.Controls.Add(this.Register1TextBox);
+            this.InstructionGroupBox.Controls.Add(this.Register2TextBox);
             this.InstructionGroupBox.Controls.Add(this.Register2MemoryAdressCheckBox);
             this.InstructionGroupBox.Controls.Add(this.Register1MemoryAdressCheckBox);
             this.InstructionGroupBox.Controls.Add(this.Register2Label);
@@ -288,6 +292,22 @@
             this.InstructionGroupBox.TabStop = false;
             this.InstructionGroupBox.Text = "Properties";
             // 
+            // Register1TextBox
+            // 
+            this.Register1TextBox.Location = new System.Drawing.Point(15, 161);
+            this.Register1TextBox.Name = "Register1TextBox";
+            this.Register1TextBox.Size = new System.Drawing.Size(177, 31);
+            this.Register1TextBox.TabIndex = 14;
+            this.Register1TextBox.Visible = false;
+            // 
+            // Register2TextBox
+            // 
+            this.Register2TextBox.Location = new System.Drawing.Point(15, 234);
+            this.Register2TextBox.Name = "Register2TextBox";
+            this.Register2TextBox.Size = new System.Drawing.Size(177, 31);
+            this.Register2TextBox.TabIndex = 14;
+            this.Register2TextBox.Visible = false;
+            // 
             // Register2MemoryAdressCheckBox
             // 
             this.Register2MemoryAdressCheckBox.AutoSize = true;
@@ -298,6 +318,7 @@
             this.Register2MemoryAdressCheckBox.TabIndex = 13;
             this.Register2MemoryAdressCheckBox.Text = "Allow memory adress";
             this.Register2MemoryAdressCheckBox.UseVisualStyleBackColor = true;
+            this.Register2MemoryAdressCheckBox.CheckedChanged += new System.EventHandler(this.Register2MemoryAdressCheckBox_CheckedChanged);
             // 
             // Register1MemoryAdressCheckBox
             // 
@@ -309,6 +330,7 @@
             this.Register1MemoryAdressCheckBox.TabIndex = 12;
             this.Register1MemoryAdressCheckBox.Text = "Allow memory adress";
             this.Register1MemoryAdressCheckBox.UseVisualStyleBackColor = true;
+            this.Register1MemoryAdressCheckBox.CheckedChanged += new System.EventHandler(this.Register1MemoryAdressCheckBox_CheckedChanged);
             // 
             // Register2Label
             // 
@@ -453,5 +475,7 @@
         private Button ExitButton;
         private Button SetRegistersButton;
         private BindingSource registerBindingSource;
+        private TextBox Register1TextBox;
+        private TextBox Register2TextBox;
     }
 }

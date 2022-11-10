@@ -5,15 +5,7 @@ namespace Intel_8086_forms
 {
     public partial class Intel8086 : Form
     {
-        Register AH = new Register() { Name = "AH" };
-        Register AL = new Register() { Name = "AL" };
-        Register BH = new Register() { Name = "BH" };
-        Register BL = new Register() { Name = "BL" };
-        Register CH = new Register() { Name = "CH" };
-        Register CL = new Register() { Name = "CL" };
-        Register DH = new Register() { Name = "DH" };
-        Register DL = new Register() { Name = "DL" };
-
+        Processor Processor = new Processor();
 
         public Intel8086()
         {
@@ -38,7 +30,6 @@ namespace Intel_8086_forms
         //Initialization of arrays
         private (Register[], TextBox[]) InitializeArrays()
         {
-            Register[] registerArray = new Register[] { AH, AL, BH, BL, CH, CL, DH, DL };
             TextBox[] registerTextBoxArray = new TextBox[]
                 {
                     AhRegisterTextBox, AlRegisterTextBox,
@@ -47,7 +38,7 @@ namespace Intel_8086_forms
                     DhRegisterTextBox, DlRegisterTextBox
                 };
 
-            return (registerArray, registerTextBoxArray);
+            return (Processor.GetAllRegisters(), registerTextBoxArray);
         }
 
         //Refreshing register values
@@ -104,46 +95,36 @@ namespace Intel_8086_forms
         //adding execution of the instruction : execute button
         private void ExecuteInstructionButton_Click(object sender, EventArgs e)
         {
-            switch (InstructionSelectionComboBox.SelectedIndex)
+            try
             {
-                case 0:
-                    Register.MOV((Register)Register1SelectionComboBox.SelectedItem, (Register)Register2SelectionComboBox.SelectedItem);
-                    RefreshValues();
-                    break;
-                case 1:
-                    Register.XCHG((Register)Register1SelectionComboBox.SelectedItem, (Register)Register2SelectionComboBox.SelectedItem);
-                    RefreshValues();
-                    break;
-                case 2:
+                IDataAccess firstOperand;
+                IDataAccess secondOperand;
 
-                    break;
-                case 3:
+                if (Register1MemoryAdressCheckBox.Checked)
+                {
+                    firstOperand = new MemoryDataAccess(Processor.Memory, HexToNumber(Register1TextBox.Text));
+                }
+                else
+                {
+                    firstOperand = (Register)Register1SelectionComboBox.SelectedItem;
+                }
 
-                    break;
-                case 4:
+                if (Register2MemoryAdressCheckBox.Checked)
+                {
+                    secondOperand = new MemoryDataAccess(Processor.Memory, HexToNumber(Register2TextBox.Text));
+                }
+                else
+                {
+                    secondOperand = (Register)Register2SelectionComboBox.SelectedItem;
+                }
 
-                    break;
-                case 5:
+                Processor.Execute(InstructionSelectionComboBox.SelectedIndex, firstOperand, secondOperand);
 
-                    break;
-                case 6:
-
-                    break;
-                case 7:
-                    Register.NOT((Register)Register1SelectionComboBox.SelectedItem);
-                    RefreshValues();
-                    break;
-                case 8:
-                    Register.INC((Register)Register1SelectionComboBox.SelectedItem);
-                    RefreshValues();
-                    break;
-                case 9:
-                    Register.DEC((Register)Register1SelectionComboBox.SelectedItem);
-                    RefreshValues();
-                    break;
-                default:
-
-                    break;
+                RefreshValues();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
         
@@ -162,6 +143,43 @@ namespace Intel_8086_forms
                 Register2MemoryAdressCheckBox.Visible = true;
                 Register2Label.Visible = true;
             }
+        }
+
+        //Allow to type in memory adress check box
+        private void Register1MemoryAdressCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Register1MemoryAdressCheckBox.Checked)
+            {
+                Register1TextBox.Visible = true;
+                Register2MemoryAdressCheckBox.Visible = false;
+            }
+            else
+            {
+                Register1TextBox.Visible = false;
+                Register2MemoryAdressCheckBox.Visible = true;
+            }
+        }
+
+        private void Register2MemoryAdressCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (Register2MemoryAdressCheckBox.Checked)
+            {
+                Register2TextBox.Visible = true;
+                Register1MemoryAdressCheckBox.Visible = false;
+            }
+            else
+            {
+                Register2TextBox.Visible = false;
+                Register1MemoryAdressCheckBox.Visible = true;
+            }
+        }
+
+        public int HexToNumber(string hexString, int maxCharCount = 2)
+        {
+            if (hexString.Length < 0 || hexString.Length > maxCharCount)
+                throw new FormatException($"Maximum character length is {maxCharCount}! Given: {hexString}");
+
+            return int.Parse(hexString, NumberStyles.HexNumber);
         }
     }
 }

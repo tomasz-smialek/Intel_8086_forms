@@ -1,6 +1,6 @@
 namespace Intel_8086_forms;
 
-public class Register
+public class Register : IDataAccess
 {
     public string? Name { get; set; }
     public int? Value { get; set; }
@@ -64,5 +64,15 @@ public class Register
     public static void NOT(Register first)
     {
         first.Value = 255 - first.Value;
+    }
+
+    public int GetValue()
+    {
+        return Value ?? 0;
+    }
+
+    public void SetValue(int value)
+    {
+        Value = value;
     }
 }
