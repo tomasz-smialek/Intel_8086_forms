@@ -249,6 +249,7 @@
             this.InstructionSelectionComboBox.Name = "InstructionSelectionComboBox";
             this.InstructionSelectionComboBox.Size = new System.Drawing.Size(177, 32);
             this.InstructionSelectionComboBox.TabIndex = 9;
+            this.InstructionSelectionComboBox.SelectedIndexChanged += new System.EventHandler(this.InstructionSelectionComboBox_SelectedIndexChanged);
             // 
             // Register1SelectionComboBox
             // 

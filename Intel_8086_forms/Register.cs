@@ -39,18 +39,30 @@ public class Register
     public static void ADD(Register first, Register second)
     {
         first.Value = first.Value + second.Value;
+        if (first.Value > 255)
+            first.Value = 255;
     }
     public static void SUB(Register first, Register second)
     {
         first.Value = first.Value - second.Value;
+        if (first.Value < 0)
+            first.Value = 0;
     }
     public static void INC(Register first)
     {
         first.Value += 1;
+        if (first.Value > 255)
+            first.Value = 255;
     }
      public static void DEC(Register first)
     {
         first.Value -= 1;
-    }   
+        if (first.Value < 0)
+            first.Value = 0;
+    }
 
+    public static void NOT(Register first)
+    {
+        first.Value = 255 - first.Value;
+    }
 }

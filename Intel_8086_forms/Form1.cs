@@ -130,11 +130,37 @@ namespace Intel_8086_forms
 
                     break;
                 case 7:
-
+                    Register.NOT((Register)Register1SelectionComboBox.SelectedItem);
+                    RefreshValues();
+                    break;
+                case 8:
+                    Register.INC((Register)Register1SelectionComboBox.SelectedItem);
+                    RefreshValues();
+                    break;
+                case 9:
+                    Register.DEC((Register)Register1SelectionComboBox.SelectedItem);
+                    RefreshValues();
                     break;
                 default:
 
                     break;
+            }
+        }
+        
+        //Hidind second register text box after selecting single argument functions
+        private void InstructionSelectionComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (InstructionSelectionComboBox.SelectedIndex == 7 || InstructionSelectionComboBox.SelectedIndex == 8 || InstructionSelectionComboBox.SelectedIndex == 9)
+            {
+                Register2SelectionComboBox.Visible = false;
+                Register2MemoryAdressCheckBox.Visible = false;
+                Register2Label.Visible = false;
+            }
+            else
+            {
+                Register2SelectionComboBox.Visible = true;
+                Register2MemoryAdressCheckBox.Visible = true;
+                Register2Label.Visible = true;
             }
         }
     }
