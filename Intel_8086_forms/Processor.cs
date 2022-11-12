@@ -19,38 +19,46 @@
             {
                 case 0: // mov
                     firstOperand.SetValue(secondOperand.GetValue());
-                    break; //xchg
-                case 1:
+                    break; 
+                case 1: //xchg
                     var tmp = firstOperand.GetValue();
                     firstOperand.SetValue(secondOperand.GetValue());
                     secondOperand.SetValue(tmp);
                     break;
-                case 2:
-
+                case 2: //and
+                    firstOperand.SetValue(firstOperand.GetValue() & secondOperand.GetValue());
                     break;
-                case 3:
-
+                case 3: //or
+                     firstOperand.SetValue(firstOperand.GetValue() | secondOperand.GetValue());
                     break;
-                case 4:
-
+                case 4: //xor
+                     firstOperand.SetValue(firstOperand.GetValue() ^ secondOperand.GetValue());
                     break;
-                case 5:
-
+                case 5: //add
+                    firstOperand.SetValue(firstOperand.GetValue() + secondOperand.GetValue());
+                    if (firstOperand.GetValue() > 255)
+                        firstOperand.SetValue(0);
                     break;
-                case 6:
-
+                case 6: //sub
+                    firstOperand.SetValue(firstOperand.GetValue() - secondOperand.GetValue());
+                    if (firstOperand.GetValue() < 0)
+                        firstOperand.SetValue(0);
                     break;
-                case 7:
-                    // not
+                case 7: // not
+                    firstOperand.SetValue(255 - firstOperand.GetValue()); 
                     break;
-                case 8:
-                    // inc
+                case 8: // inc
+                    firstOperand.SetValue(firstOperand.GetValue() + 1); 
+                    if (firstOperand.GetValue() > 255)
+                        firstOperand.SetValue(0);
                     break;
-                case 9:
-                    // dec
+                case 9: // dec
+                    firstOperand.SetValue(firstOperand.GetValue() - 1); 
+                    if (firstOperand.GetValue() < 0)
+                        firstOperand.SetValue(0);
                     break;
                 default:
-
+                    MessageBox.Show("Something went wrong");
                     break;
             }
         }
