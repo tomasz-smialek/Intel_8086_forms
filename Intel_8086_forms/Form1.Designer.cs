@@ -63,10 +63,11 @@
             this.SetRegistersButton = new System.Windows.Forms.Button();
             this.registerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MemoryStatusGroupBox = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutMemoryPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.MemoryValueLabel = new System.Windows.Forms.Label();
             this.MemoryIndexLabel = new System.Windows.Forms.Label();
-            this.MemoryRefreshButton = new System.Windows.Forms.Button();
             this.SetRegistersGroupBox.SuspendLayout();
             this.InstructionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registerBindingSource)).BeginInit();
@@ -389,9 +390,9 @@
             // ExecuteInstructionButton
             // 
             this.ExecuteInstructionButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ExecuteInstructionButton.Location = new System.Drawing.Point(297, 296);
+            this.ExecuteInstructionButton.Location = new System.Drawing.Point(398, 296);
             this.ExecuteInstructionButton.Name = "ExecuteInstructionButton";
-            this.ExecuteInstructionButton.Size = new System.Drawing.Size(115, 53);
+            this.ExecuteInstructionButton.Size = new System.Drawing.Size(213, 53);
             this.ExecuteInstructionButton.TabIndex = 15;
             this.ExecuteInstructionButton.Text = "Execute";
             this.ExecuteInstructionButton.UseVisualStyleBackColor = true;
@@ -400,7 +401,7 @@
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ExitButton.Location = new System.Drawing.Point(599, 295);
+            this.ExitButton.Location = new System.Drawing.Point(826, 296);
             this.ExitButton.Name = "ExitButton";
             this.ExitButton.Size = new System.Drawing.Size(115, 53);
             this.ExitButton.TabIndex = 16;
@@ -425,6 +426,8 @@
             // 
             // MemoryStatusGroupBox
             // 
+            this.MemoryStatusGroupBox.Controls.Add(this.label2);
+            this.MemoryStatusGroupBox.Controls.Add(this.label1);
             this.MemoryStatusGroupBox.Controls.Add(this.flowLayoutMemoryPanel);
             this.MemoryStatusGroupBox.Controls.Add(this.MemoryValueLabel);
             this.MemoryStatusGroupBox.Controls.Add(this.MemoryIndexLabel);
@@ -436,13 +439,30 @@
             this.MemoryStatusGroupBox.TabStop = false;
             this.MemoryStatusGroupBox.Text = "Memory Status";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 28);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Cell";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(103, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(67, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Value";
+            // 
             // flowLayoutMemoryPanel
             // 
             this.flowLayoutMemoryPanel.AutoScroll = true;
-            this.flowLayoutMemoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutMemoryPanel.Location = new System.Drawing.Point(3, 27);
+            this.flowLayoutMemoryPanel.Location = new System.Drawing.Point(3, 56);
             this.flowLayoutMemoryPanel.Name = "flowLayoutMemoryPanel";
-            this.flowLayoutMemoryPanel.Size = new System.Drawing.Size(215, 248);
+            this.flowLayoutMemoryPanel.Size = new System.Drawing.Size(215, 219);
             this.flowLayoutMemoryPanel.TabIndex = 1;
             // 
             // MemoryValueLabel
@@ -461,17 +481,6 @@
             this.MemoryIndexLabel.Size = new System.Drawing.Size(0, 25);
             this.MemoryIndexLabel.TabIndex = 0;
             // 
-            // MemoryRefreshButton
-            // 
-            this.MemoryRefreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.MemoryRefreshButton.Location = new System.Drawing.Point(720, 296);
-            this.MemoryRefreshButton.Name = "MemoryRefreshButton";
-            this.MemoryRefreshButton.Size = new System.Drawing.Size(221, 53);
-            this.MemoryRefreshButton.TabIndex = 0;
-            this.MemoryRefreshButton.Text = "Refresh Memory";
-            this.MemoryRefreshButton.UseVisualStyleBackColor = true;
-            this.MemoryRefreshButton.Click += new System.EventHandler(this.MemoryRefreshButton_Click);
-            // 
             // Intel8086
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -479,7 +488,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(953, 360);
-            this.Controls.Add(this.MemoryRefreshButton);
             this.Controls.Add(this.MemoryStatusGroupBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ExecuteInstructionButton);
@@ -538,9 +546,10 @@
         private TextBox Register1TextBox;
         private TextBox Register2TextBox;
         private GroupBox MemoryStatusGroupBox;
-        private Button MemoryRefreshButton;
         private Label MemoryValueLabel;
         private Label MemoryIndexLabel;
         private FlowLayoutPanel flowLayoutMemoryPanel;
+        private Label label2;
+        private Label label1;
     }
 }

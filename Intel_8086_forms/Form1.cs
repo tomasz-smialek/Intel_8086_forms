@@ -126,6 +126,15 @@ namespace Intel_8086_forms
             {
                 MessageBox.Show(ex.Message);
             }
+
+            if (!flowLayoutMemoryPanel.Controls.Equals(Processor.MemoryStatus()))
+            {
+                flowLayoutMemoryPanel.Controls.Clear();
+                {
+                    foreach (var c in Processor.MemoryStatus())
+                        flowLayoutMemoryPanel.Controls.Add(c);
+                }
+            }
         }
         
         //Hidind second register text box after selecting single argument functions
@@ -176,19 +185,6 @@ namespace Intel_8086_forms
             {
                 Register2TextBox.Visible = false;
                 Register1MemoryAdressCheckBox.Visible = true;
-            }
-        }
-
-        //Displays currently taken memory
-        private void MemoryRefreshButton_Click(object sender, EventArgs e)
-        {
-            if (!flowLayoutMemoryPanel.Controls.Equals(Processor.MemoryStatus()))
-            {
-                flowLayoutMemoryPanel.Controls.Clear();
-                {
-                    foreach (var c in Processor.MemoryStatus())
-                        flowLayoutMemoryPanel.Controls.Add(c);
-                }
             }
         }
     }
