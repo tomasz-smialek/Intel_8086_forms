@@ -102,7 +102,7 @@ namespace Intel_8086_forms
 
                 if (Register1MemoryAdressCheckBox.Checked)
                 {
-                    firstOperand = new MemoryDataAccess(Processor.Memory, HexToNumber(Register1TextBox.Text));
+                    firstOperand = new MemoryDataAccess(Processor.Memory, Processor.HexToNumber(Register1TextBox.Text, 4));
                 }
                 else
                 {
@@ -111,7 +111,7 @@ namespace Intel_8086_forms
 
                 if (Register2MemoryAdressCheckBox.Checked)
                 {
-                    secondOperand = new MemoryDataAccess(Processor.Memory, HexToNumber(Register2TextBox.Text));
+                    secondOperand = new MemoryDataAccess(Processor.Memory, Processor.HexToNumber(Register2TextBox.Text, 4));
                 }
                 else
                 {
@@ -135,11 +135,14 @@ namespace Intel_8086_forms
             {
                 Register2SelectionComboBox.Visible = false;
                 Register2MemoryAdressCheckBox.Visible = false;
+                Register2MemoryAdressCheckBox.Checked = false;
                 Register2Label.Visible = false;
+                Register2TextBox.Visible = false;
             }
             else
             {
                 Register2SelectionComboBox.Visible = true;
+                Register2MemoryAdressCheckBox.Checked = false;
                 Register2MemoryAdressCheckBox.Visible = true;
                 Register2Label.Visible = true;
             }
@@ -160,6 +163,8 @@ namespace Intel_8086_forms
             }
         }
 
+        //Allow to type in memory adress check box
+
         private void Register2MemoryAdressCheckBox_CheckedChanged(object sender, EventArgs e)
         {
             if (Register2MemoryAdressCheckBox.Checked)
@@ -174,12 +179,17 @@ namespace Intel_8086_forms
             }
         }
 
-        public int HexToNumber(string hexString, int maxCharCount = 2)
+        //Displays currently taken memory
+        private void MemoryRefreshButton_Click(object sender, EventArgs e)
         {
-            if (hexString.Length < 0 || hexString.Length > maxCharCount)
-                throw new FormatException($"Maximum character length is {maxCharCount}! Given: {hexString}");
-
-            return int.Parse(hexString, NumberStyles.HexNumber);
+            if (!flowLayoutMemoryPanel.Controls.Equals(Processor.MemoryStatus()))
+            {
+                flowLayoutMemoryPanel.Controls.Clear();
+                {
+                    foreach (var c in Processor.MemoryStatus())
+                        flowLayoutMemoryPanel.Controls.Add(c);
+                }
+            }
         }
     }
 }

@@ -14,58 +14,6 @@ public class Register : IDataAccess
         return false;
     }
 
-    public static void XCHG(Register first, Register second)
-    {
-        (first.Value, second.Value) = (second.Value, first.Value);
-    }
-
-    public static void MOV(Register first, Register second)
-    {
-        first.Value = second.Value;
-    }
-
-    public static void AND(Register first, Register second)
-    {
-        first.Value = first.Value & second.Value;
-    }
-     public static void OR(Register first, Register second)
-    {
-        first.Value = first.Value | second.Value;
-    }
-    public static void XOR(Register first, Register second)
-    {
-        first.Value = first.Value ^ second.Value;
-    }
-    public static void ADD(Register first, Register second)
-    {
-        first.Value = first.Value + second.Value;
-        if (first.Value > 255)
-            first.Value = 255;
-    }
-    public static void SUB(Register first, Register second)
-    {
-        first.Value = first.Value - second.Value;
-        if (first.Value < 0)
-            first.Value = 0;
-    }
-    public static void INC(Register first)
-    {
-        first.Value += 1;
-        if (first.Value > 255)
-            first.Value = 255;
-    }
-     public static void DEC(Register first)
-    {
-        first.Value -= 1;
-        if (first.Value < 0)
-            first.Value = 0;
-    }
-
-    public static void NOT(Register first)
-    {
-        first.Value = 255 - first.Value;
-    }
-
     public int GetValue()
     {
         return Value ?? 0;

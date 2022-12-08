@@ -62,9 +62,15 @@
             this.ExitButton = new System.Windows.Forms.Button();
             this.SetRegistersButton = new System.Windows.Forms.Button();
             this.registerBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.MemoryStatusGroupBox = new System.Windows.Forms.GroupBox();
+            this.flowLayoutMemoryPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.MemoryValueLabel = new System.Windows.Forms.Label();
+            this.MemoryIndexLabel = new System.Windows.Forms.Label();
+            this.MemoryRefreshButton = new System.Windows.Forms.Button();
             this.SetRegistersGroupBox.SuspendLayout();
             this.InstructionGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registerBindingSource)).BeginInit();
+            this.MemoryStatusGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
             // SetRegistersGroupBox
@@ -394,9 +400,9 @@
             // ExitButton
             // 
             this.ExitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ExitButton.Location = new System.Drawing.Point(590, 296);
+            this.ExitButton.Location = new System.Drawing.Point(599, 295);
             this.ExitButton.Name = "ExitButton";
-            this.ExitButton.Size = new System.Drawing.Size(124, 53);
+            this.ExitButton.Size = new System.Drawing.Size(115, 53);
             this.ExitButton.TabIndex = 16;
             this.ExitButton.Text = "Exit";
             this.ExitButton.UseVisualStyleBackColor = true;
@@ -417,19 +423,71 @@
             // 
             this.registerBindingSource.DataSource = typeof(Intel_8086_forms.Register);
             // 
+            // MemoryStatusGroupBox
+            // 
+            this.MemoryStatusGroupBox.Controls.Add(this.flowLayoutMemoryPanel);
+            this.MemoryStatusGroupBox.Controls.Add(this.MemoryValueLabel);
+            this.MemoryStatusGroupBox.Controls.Add(this.MemoryIndexLabel);
+            this.MemoryStatusGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MemoryStatusGroupBox.Location = new System.Drawing.Point(720, 12);
+            this.MemoryStatusGroupBox.Name = "MemoryStatusGroupBox";
+            this.MemoryStatusGroupBox.Size = new System.Drawing.Size(221, 278);
+            this.MemoryStatusGroupBox.TabIndex = 15;
+            this.MemoryStatusGroupBox.TabStop = false;
+            this.MemoryStatusGroupBox.Text = "Memory Status";
+            // 
+            // flowLayoutMemoryPanel
+            // 
+            this.flowLayoutMemoryPanel.AutoScroll = true;
+            this.flowLayoutMemoryPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutMemoryPanel.Location = new System.Drawing.Point(3, 27);
+            this.flowLayoutMemoryPanel.Name = "flowLayoutMemoryPanel";
+            this.flowLayoutMemoryPanel.Size = new System.Drawing.Size(215, 248);
+            this.flowLayoutMemoryPanel.TabIndex = 1;
+            // 
+            // MemoryValueLabel
+            // 
+            this.MemoryValueLabel.AutoSize = true;
+            this.MemoryValueLabel.Location = new System.Drawing.Point(103, 46);
+            this.MemoryValueLabel.Name = "MemoryValueLabel";
+            this.MemoryValueLabel.Size = new System.Drawing.Size(0, 25);
+            this.MemoryValueLabel.TabIndex = 0;
+            // 
+            // MemoryIndexLabel
+            // 
+            this.MemoryIndexLabel.AutoSize = true;
+            this.MemoryIndexLabel.Location = new System.Drawing.Point(13, 46);
+            this.MemoryIndexLabel.Name = "MemoryIndexLabel";
+            this.MemoryIndexLabel.Size = new System.Drawing.Size(0, 25);
+            this.MemoryIndexLabel.TabIndex = 0;
+            // 
+            // MemoryRefreshButton
+            // 
+            this.MemoryRefreshButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.MemoryRefreshButton.Location = new System.Drawing.Point(720, 296);
+            this.MemoryRefreshButton.Name = "MemoryRefreshButton";
+            this.MemoryRefreshButton.Size = new System.Drawing.Size(221, 53);
+            this.MemoryRefreshButton.TabIndex = 0;
+            this.MemoryRefreshButton.Text = "Refresh Memory";
+            this.MemoryRefreshButton.UseVisualStyleBackColor = true;
+            this.MemoryRefreshButton.Click += new System.EventHandler(this.MemoryRefreshButton_Click);
+            // 
             // Intel8086
             // 
+            this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(726, 360);
+            this.ClientSize = new System.Drawing.Size(953, 360);
+            this.Controls.Add(this.MemoryRefreshButton);
+            this.Controls.Add(this.MemoryStatusGroupBox);
             this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.ExecuteInstructionButton);
             this.Controls.Add(this.SetRegistersButton);
             this.Controls.Add(this.ClearRegistersButton);
             this.Controls.Add(this.InstructionGroupBox);
             this.Controls.Add(this.SetRegistersGroupBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Intel8086";
             this.Text = "Intel 8086 simulator";
             this.Load += new System.EventHandler(this.Intel8086_Load);
@@ -438,6 +496,8 @@
             this.InstructionGroupBox.ResumeLayout(false);
             this.InstructionGroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.registerBindingSource)).EndInit();
+            this.MemoryStatusGroupBox.ResumeLayout(false);
+            this.MemoryStatusGroupBox.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -477,5 +537,10 @@
         private BindingSource registerBindingSource;
         private TextBox Register1TextBox;
         private TextBox Register2TextBox;
+        private GroupBox MemoryStatusGroupBox;
+        private Button MemoryRefreshButton;
+        private Label MemoryValueLabel;
+        private Label MemoryIndexLabel;
+        private FlowLayoutPanel flowLayoutMemoryPanel;
     }
 }

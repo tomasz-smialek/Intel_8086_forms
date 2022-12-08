@@ -1,7 +1,11 @@
-﻿namespace Intel_8086_forms
+﻿using System.Globalization;
+
+namespace Intel_8086_forms
 {
     internal class Processor
     {
+
+        //creating all registers 
         Register AH = new Register() { Name = "AH" };
         Register AL = new Register() { Name = "AL" };
         Register BH = new Register() { Name = "BH" };
@@ -13,6 +17,7 @@
 
         public Memory Memory { get; private set; } = new();
 
+        //main execute processor function
         public void Execute(int opcode, IDataAccess firstOperand, IDataAccess secondOperand)
         {
             switch (opcode)
@@ -63,6 +68,44 @@
             }
         }
 
+        //creating an array of existing registers
         public Register[] GetAllRegisters() => new Register[] { AH, AL, BH, BL, CH, CL, DH, DL };
+
+        //validate user input
+        public static int HexToNumber(string hexString, int maxCharCount = 2)
+        {
+            if (hexString.Length < 0 || hexString.Length > maxCharCount)
+                throw new FormatException($"Maximum character length is {maxCharCount}! Given: {hexString}");
+
+            return int.Parse(hexString, NumberStyles.HexNumber);
+        }
+
+        public List<Label> MemoryStatus()
+        {
+            var lblList = new List<Label>();
+
+            for(int i = 0; i < Memory._data.Length; i++) 
+            {
+                if(Memory.GetValue(i) != 0)
+                {
+                    var memValue = new Label()
+                    {
+                        Text = Memory.GetValue(i).ToString("X2"),
+                        Location = new Point(20, 12)
+                    };
+
+                    var memAdress = new Label()
+                    {
+                        Text = i.ToString("X4"),
+                        Location = new Point(13,12)
+                    };
+
+                    lblList.Add(memAdress);
+                    lblList.Add(memValue);
+                }        
+            }
+            
+            return lblList;
+        }
     }
 }
