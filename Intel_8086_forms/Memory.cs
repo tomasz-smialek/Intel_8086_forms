@@ -5,6 +5,7 @@
         private const int Size = 0x10000;
         public readonly byte[] _data = new byte[Size];
 
+        //Interface methods
         public void SetValue(int address, byte value)
         {
             _data[CheckAddress(address)] = value;

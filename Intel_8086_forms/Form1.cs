@@ -127,6 +127,7 @@ namespace Intel_8086_forms
                 MessageBox.Show(ex.Message);
             }
 
+            //refreshing memory status panel if there is a memory cell in use
             if (!flowLayoutMemoryPanel.Controls.Equals(Processor.MemoryStatus()))
             {
                 flowLayoutMemoryPanel.Controls.Clear();

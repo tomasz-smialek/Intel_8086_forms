@@ -11,6 +11,7 @@
             _address = address;
         }
 
+        //interface methods
         public int GetValue()
         {
             return _memory.GetValue(_address);
